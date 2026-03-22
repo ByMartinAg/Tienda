@@ -26,11 +26,11 @@ public class Formulario extends javax.swing.JFrame {
      * Creates new form Formulario
      */
     private VentaControlador ventaControlador = new VentaControlador();
-    
+    private ArrayList<Producto> productosActuales = new ArrayList<>();
     public Formulario() {
         initComponents();
-        
-        // conectar la tabla 
+
+        // conectar la tabla
         tblCarrito.setModel(ventaControlador.getVentaTabla());
         for (String cate : DatoProducto.getCategorias()) {
             cmbCategoria.addItem(cate);
@@ -42,8 +42,8 @@ public class Formulario extends javax.swing.JFrame {
     cmbProducto.removeAllItems();
     
     String categoria = (String)cmbCategoria.getSelectedItem();
-    
-    for (Producto p : DatoProducto.getProductos(categoria)){
+    productosActuales = DatoProducto.getProductos(categoria);
+    for (Producto p : productosActuales){
             cmbProducto.addItem(p);
     }
         mostrarImagen();
@@ -69,8 +69,6 @@ public class Formulario extends javax.swing.JFrame {
     lblSubtotal.setText(" " + ventaControlador.getSubtotal());
     lblIVA.setText(" " + ventaControlador.getIVA());
     lblTotal.setText(" " + ventaControlador.getTotal());
-    
-    
     }
     
     
@@ -365,18 +363,17 @@ public class Formulario extends javax.swing.JFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         Producto p = (Producto) cmbProducto.getSelectedItem();
-        if (p == null) return;
         int cantidad = (int) spnCantidad.getValue();
-        
-        if(p.getStock() <= 0){
-            JOptionPane.showMessageDialog(this, "Producto sin stock.");
+        if (cantidad > p.getStock()){
+            JOptionPane.showMessageDialog(this, "No hay suficientes productos para vender, solo tienes en stock" + p.getStock() + " unidades");
             return;
         }
-        
+        if (p == null) return;
         ventaControlador.agregarProducto(p, cantidad);
         chkVendido.setSelected(p.getStock() == 0);
-        
+        lblstock.setText(">>" + p.getStock());
         actualizarTotales();
+        mostrarImagen();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAgregarActionPerformed
 

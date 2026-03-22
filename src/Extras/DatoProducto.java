@@ -14,16 +14,31 @@ import java.util.Arrays;
  * @author marti
  */
 public class DatoProducto {
-    public static String[] getCategorias(){
+    private static ArrayList<Producto> alimentos = null;
+    private static ArrayList<Producto> bebidas = null;
+    private static ArrayList<Producto> botanas = null;
+    private static ArrayList<Producto> limpieza = null;
+    private static ArrayList<Producto> higiene = null;
+
+    public static String[] getCategorias() {
         return new String[] {"Alimentos", "Bebidas", "Botanas", "Limpieza", "Higiene"};
     }
     public static ArrayList<Producto> getProductos(String categoria){
         switch (categoria){
-            case "Alimentos": return getAlimentos();
-            case "Bebidas": return getBebidas();
-            case "Botanas": return getBotanas();
-            case "Limpieza": return getLimpieza();
-            case "Higiene": return getHigiene();
+            case "Alimentos":
+                if (alimentos == null) alimentos = getAlimentos();
+                return alimentos;
+            case "Bebidas":
+                if (bebidas == null) bebidas = getBebidas();
+                return bebidas;
+            case "Botanas":
+                if (botanas == null) botanas = getBotanas();
+                return botanas;
+            case "Limpieza":
+                if (limpieza == null) limpieza = getLimpieza();
+            case "Higiene":
+                if (higiene == null) higiene = getHigiene();
+                return higiene;
             default: return new ArrayList<>();
         }
     }
