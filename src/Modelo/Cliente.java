@@ -22,7 +22,7 @@ public class Cliente {
     public String getNombre (){
         return nombre;
     }
-    public String getAppellidos () {
+    public String getApellidos() {
         return apellidos;
     }
     public int getEdad (){

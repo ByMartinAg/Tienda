@@ -31,13 +31,14 @@ public class Producto {
     public double getPrecio(){
         return precio;
     }
-    public int stock (){
+    public int getStock(){
         return stock;
     }
-    public String categoria (){
+    public String getCategoria(){
         return categoria;
     }
-    
+
+    // un set nomas
     public void setStock (int stock){
         this.stock = stock;
     }
