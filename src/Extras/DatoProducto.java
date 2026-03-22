@@ -43,17 +43,19 @@ public class DatoProducto {
         }
     }
 
+    // saca las imagenes de aqui we: https://www.heb.com.mx
+    // nadamas click izquierdo, copiar direccion d imagen, y las metes donde esta el link
     private static ArrayList<Producto>getAlimentos(){
         ArrayList<Producto> lista = new ArrayList<>();
-        lista.add(new Producto("Arroz", 22, 10, "", "Alimentos"));
-        lista.add(new Producto("Frijoles", 30, 10, "", "Alimentos"));
-        lista.add(new Producto("Sopa",5, 10, "", "Alimentos"));
+        lista.add(new Producto("Arroz", 22, 10, "https://hebmx.vtexassets.com/arquivos/ids/634383-1200-1200?v=638497831248100000&width=1200&height=1200&aspect=true", "Alimentos"));
+        lista.add(new Producto("Frijoles", 30, 10, " ", "Alimentos"));
+        lista.add(new Producto("Sopa",5, 10, " ", "Alimentos"));
 
         return lista;
     }
     private static ArrayList<Producto>getBebidas(){
         ArrayList<Producto> lista = new ArrayList<>();
-        lista.add(new Producto("Agua", 15, 10, "", "Bebidas"));
+        lista.add(new Producto("Agua", 15, 10, "https://hebmx.vtexassets.com/arquivos/ids/579923-1600-1600?v=638497703729730000&width=1600&height=1600&aspect=true", "Bebidas"));
         lista.add(new Producto("Jugo", 15, 10, "", "Bebidas"));
         lista.add(new Producto("Gaseosa", 20, 10, "", "Bebidas"));
         return lista;
