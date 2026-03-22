@@ -33,7 +33,7 @@ public class Ticket {
                         item.getSubtotal()));
             }
             sb.append("------------\n");
-            sb.append(String.format("%30s %10.2f\n", "SUBTOTAL SIN IVA: ", venta.getTotal()));
+            sb.append(String.format("%30s %10.2f\n", "SUBTOTAL SIN IVA: ", venta.getSubtotal()));
             sb.append(String.format("%30s %10.2f\n" , "IVA (16%): ", venta.getMontoIva()));
             sb.append(String.format("%30s %10.2f\n", "TOTAL:", venta.getTotal()));
             sb.append("\n Gracias por su compra\n");

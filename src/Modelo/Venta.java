@@ -16,7 +16,7 @@ public class Venta {
     public Venta() {
         this.items = new ArrayList<>();
     }
-    public void setCliente (){
+    public void setCliente (Cliente cliente){
         this.cliente = cliente;
     }
     // solo para usar gets en otras clases, son unicamente para no llamar a toda la variable y tener todo en una clase

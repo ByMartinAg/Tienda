@@ -33,7 +33,7 @@ public class VentaControlador {
         // aqui si no existe meter un nuevo item
         ItemVenta nuevoItem = new ItemVenta(producto, cantidad);
         ventaTabla.agregarItem(nuevoItem);
-        ventaTabla.agregarItem(nuevoItem);
+        venta.agregarItem(nuevoItem);
 
         // para reducir el stock del propducto
         producto.setStock(producto.getStock() - cantidad);

@@ -37,6 +37,9 @@ public class Producto {
     public String getCategoria(){
         return categoria;
     }
+    public String getImagen(){
+    return imagen;
+    }
 
     // un set nomas
     public void setStock (int stock){

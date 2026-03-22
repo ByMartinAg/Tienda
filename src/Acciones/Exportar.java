@@ -33,7 +33,7 @@ public class Exportar {
             writer.println("Producto, Categoria, Precio Unitario, Cantidad, Subtotal");
 
             for (var item : venta.getItems()){
-                writer.printf("%s, %s, %2f, %d, %, %.2f%n",
+                writer.printf("%s, %s, %.2f, %d, %.2f%n",
                         item.getProducto().getNombre(),
                         item.getProducto().getCategoria(),
                         item.getProducto().getPrecio(),
