@@ -26,6 +26,7 @@ public class VentaControlador {
             ItemVenta item = ventaTabla.getItems().get(i);
             if (item.getProducto().getNombre().equals(producto.getNombre())) {
                 item.setCantidad(item.getCantidad() + cantidad);
+                producto.setStock(producto.getStock() - cantidad);
                 ventaTabla.fireTableRowsUpdated(i, i);
                 return;
             }
