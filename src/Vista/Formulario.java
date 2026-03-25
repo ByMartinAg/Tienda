@@ -383,6 +383,7 @@ public class Formulario extends javax.swing.JFrame {
         
         Cliente cliente = new Cliente(txtNombre.getText(), txtApellidos.getText(), 
                 txtEdad.getText().isBlank() ? 0 : Integer.parseInt(txtEdad.getText()));
+        ventaControlador.getVenta().setCliente(cliente);
         String ticket = Ticket.construirTicket(ventaControlador.getVenta());
         JTextArea area = new JTextArea(ticket);
         area.setEditable(false);
